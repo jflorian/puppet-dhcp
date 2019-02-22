@@ -111,6 +111,7 @@ branches:
   only:
   - master
   - /^v\d/
+  - jflo
 notifications:
   email: false
   irc:
