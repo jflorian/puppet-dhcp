@@ -3,12 +3,15 @@
 define dhcp::host (
   Stdlib::IP::Address $ip,
   Dhcp::Mac $mac,
-  String $ddns_hostname                 = $name,
-  Hash $options                         = {},
-  String $comment                       = '',
-  Boolean $ignored                      = false,
-  Optional[Integer] $default_lease_time = undef,
-  Optional[Integer] $max_lease_time     = undef,
+  String $ddns_hostname                  = $name,
+  Hash $options                          = {},
+  String $comment                        = '',
+  Boolean $ignored                       = false,
+  Optional[Integer] $default_lease_time  = undef,
+  Optional[Integer] $max_lease_time      = undef,
+  Optional[Array[String[1]]] $on_commit  = [],
+  Optional[Array[String[1]]] $on_release = [],
+  Optional[Array[String[1]]] $on_expiry  = [],
 ) {
 
   $host = $name
